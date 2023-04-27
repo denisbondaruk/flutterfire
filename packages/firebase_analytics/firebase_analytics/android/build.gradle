@@ -35,6 +35,9 @@ def getRootProjectExtOrCoreProperty(name, firebaseCoreProject) {
 }
 
 android {
+    if (!project.hasProperty("android.buildCacheDir")) {
+        namespace "io.flutter.plugins.firebase.analytics"
+    }
     compileSdkVersion 31
 
     defaultConfig {

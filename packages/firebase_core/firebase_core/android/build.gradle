@@ -20,7 +20,10 @@ def getRootProjectExtOrDefaultProperty(name) {
     return rootProject.ext.get("FlutterFire").get(name)
 }
 
-android {
+android {    
+    if (!project.hasProperty("android.buildCacheDir")) {
+        namespace "io.flutter.plugins.firebase.core"
+    }
     compileSdkVersion 31
 
     defaultConfig {

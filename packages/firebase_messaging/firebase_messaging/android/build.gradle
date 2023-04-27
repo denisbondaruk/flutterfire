@@ -35,6 +35,9 @@ def getRootProjectExtOrCoreProperty(name, firebaseCoreProject) {
 }
 
 android {
+  if (!project.hasProperty("android.buildCacheDir")) {
+    namespace "io.flutter.plugins.firebase.messaging"
+  }
   compileSdkVersion 33
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8

@@ -34,6 +34,9 @@ def getRootProjectExtOrCoreProperty(name, firebaseCoreProject) {
 }
 
 android {
+  if (!project.hasProperty("android.buildCacheDir")) {
+    namespace "io.flutter.plugins.firebase.crashlytics"
+  }
   compileSdkVersion 31
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
